@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortifolioWebsite</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
 </head>
-<body>
+<body id="top">
 
-    <h1>
-        Hello, This is my Portfolio Website
-    </h1>
-    <div class="profile-container">
-        <img src="IMG_3212.jpeg" alt="Profile Picture" class="profile-pic">
-        <h2>My Portfolio</h2>
-        <p>Welcome to my personal portfolio website!</p>
-    </div>
+  <header class="navbar">
+    <div class="nav-logo">My Portfolio</div>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">CV / Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p>
-        This is a simple portfolio website created to showcase my projects and skills. Feel free to explore and contact me for any inquiries or collaborations.
+  <main class="content">
+    <h1>Hello, This is my Portfolio Website</h1>
+
+    <section class="profile-section" aria-labelledby="profile-name">
+      <img src="IMG_3212.jpeg" alt="Profile Picture" class="profile-image">
+      <div class="profile-text">
+        <h2 id="profile-name" class="profile-name">My name is Clovis Bonja</h2>
+        <p class="profile-intro">Welcome to my personal portfolio website!</p>
+      </div>
+    </section>
+
+    <p class="intro-text">
+      This is a simple portfolio website created to showcase my projects and skills. 
+      Feel free to explore and contact me for any inquiries or collaborations.
     </p>
 
-    <footer>
-        &copy; My Portfolio
-    </footer>   
+    <section class="box-grid" aria-label="Feature boxes">
+      <article class="info-box">
+        <h3>Box 1</h3>
+        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
+        <div id="box-content-1" class="box-content"></div>
+      </article>
+      <article class="info-box">
+        <h3>Box 2</h3>
+        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
+        <div id="box-content-2" class="box-content"></div>
+      </article>
+      <article class="info-box">
+        <h3>Box 3</h3>
+        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
+        <div id="box-content-3" class="box-content"></div>
+      </article>
+      <article class="info-box">
+        <h3>Box 4</h3>
+        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
+        <div id="box-content-4" class="box-content"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; My Portfolio —
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
 
 </body>
 </html>
