@@ -1,71 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Website</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+<!DOCTYPE html> <!-- Forteller nettleseren at dette er et HTML5-dokument -->
+<html lang="en"> <!-- Starter HTML-dokumentet og setter språket til engelsk -->
+<head> <!-- Head-delen inneholder metadata og linker -->
+  <meta charset="UTF-8" /> <!-- Bruker UTF-8 tegnsett (støtter æøå osv.) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Gjør siden responsiv på mobil -->
+  <title>Portfolio Website</title> <!-- Viser tittel i fanen til nettleseren -->
+  <link rel="stylesheet" href="style.css"/> <!-- Kobler til CSS-filen som styrer utseende -->
+  <script defer src="script.js"></script> <!-- Laster inn en generell JavaScript-fil, "defer" betyr at den lastes etter HTML -->
 </head>
-<body id="top">
+<body id="top"> <!-- Starter body (alt synlig innhold). id="top" brukes for "back to top"-lenke -->
 
-  <header class="navbar">
-    <div class="nav-logo">My Portfolio</div>
-    <nav aria-label="Main">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">CV / Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <header class="navbar"> <!-- Toppfeltet med navigasjonsmeny -->
+    <div class="nav-logo">My Portfolio</div> <!-- Logo/tekst til venstre i navbaren -->
+    <nav aria-label="Main"> <!-- Navigation-seksjonen -->
+      <ul class="nav-links"> <!-- Liste for lenkene i menyen -->
+        <li><a href="index.html">Home</a></li> <!-- Menypunkt: Hjem -->
+        <li><a href="resume.html">CV / Resume</a></li> <!-- Menypunkt: CV-side -->
+        <li><a href="projects.html">Projects</a></li> <!-- Menypunkt: Prosjekter -->
+        <li><a href="contact.html">Contact</a></li> <!-- Menypunkt: Kontakt -->
       </ul>
     </nav>
   </header>
 
-  <main class="content">
-    <h1>Hello, This is my Portfolio Website</h1>
+  <main class="content"> <!-- Hovedinnholdet på siden -->
+    <h1>Hello, This is my Portfolio Website</h1> <!-- Stor overskrift i midten -->
 
-    <section class="profile-section" aria-labelledby="profile-name">
-      <img src="IMG_3212.jpeg" alt="Profile Picture" class="profile-image">
-      <div class="profile-text">
-        <h2 id="profile-name" class="profile-name">My name is Clovis Bonja</h2>
-        <p class="profile-intro">Welcome to my personal portfolio website!</p>
+    <section class="profile-section" aria-labelledby="profile-name"> <!-- Profil-seksjon -->
+      <img src="IMG_3212.jpeg" alt="Profile Picture" class="profile-image"> <!-- Profilbilde -->
+      <div class="profile-text"> <!-- Teksten ved siden av/under bildet -->
+        <h2 id="profile-name" class="profile-name">My name is Clovis Bonja</h2> <!-- Navnet ditt -->
+        <p class="profile-intro">Welcome to my personal portfolio website!</p> <!-- Kort intro-tekst -->
       </div>
     </section>
 
-    <p class="intro-text">
-      This is a simple portfolio website created to showcase my projects and skills. 
-      Feel free to explore and contact me for any inquiries or collaborations.
-    </p>
+    <section class="box-grid" aria-label="Feature boxes"> <!-- Grid med bokser -->
+     
+     <!-- Første boks: Live klokke -->
+     <article class="info-box">
+        <h3>Clock</h3> <!-- Tittel på boksen -->
+        <p class="box-description">Live Clock:</p> <!-- Beskrivelse under tittelen -->
+        <div id="box-content-1" class="box-content"></div> <!-- Her fyller JavaScript inn klokken -->
+      </article>
 
-    <section class="box-grid" aria-label="Feature boxes">
+      <!-- Andre boks: Live dato -->
       <article class="info-box">
-        <h3>Box 1</h3>
-        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
-        <div id="box-content-1" class="box-content"></div>
+        <h3>Date</h3>
+        <p class="box-description">Live date:</p>
+        <div id="box-content-2" class="box-content"></div> <!-- Her fyller JavaScript inn datoen -->
       </article>
-      <article class="info-box">
-        <h3>Box 2</h3>
-        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
-        <div id="box-content-2" class="box-content"></div>
-      </article>
-      <article class="info-box">
-        <h3>Box 3</h3>
-        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
-        <div id="box-content-3" class="box-content"></div>
-      </article>
-      <article class="info-box">
-        <h3>Box 4</h3>
-        <p class="box-description">Kort beskrivelse. JS kan rendres under.</p>
-        <div id="box-content-4" class="box-content"></div>
-      </article>
+
     </section>
   </main>
 
-  <footer class="footer">
-    &copy; My Portfolio —
-    <a href="#top" class="back-to-top">Back to top ↑</a>
+  <footer class="footer"> <!-- Bunnfeltet -->
+    &copy; My Portfolio — <!-- Opphavsrett -->
+    <a href="#top" class="back-to-top">Back to top ↑</a> <!-- Lenke for å hoppe til toppen -->
   </footer>
 
+  <!-- Koble til egne JavaScript-filer for klokke og dato -->
+  <script defer src="time.js"></script>
+  <script defer src="date.js"></script>
 
 </body>
 </html>

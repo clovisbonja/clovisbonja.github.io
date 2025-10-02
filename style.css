@@ -3,56 +3,60 @@ File: style.css
 ========================= */
 
 /* Reset + base */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; scroll-behavior: smooth; height: 100%; }
+* { box-sizing: border-box; } /* gjør at padding og border regnes innenfor elementets bredde */
+html, body { margin: 0; padding: 0; scroll-behavior: smooth; height: 100%; } /* nullstiller margin/padding, smooth scroll, full høyde */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background:#fff;
-  color:#000;
-  display: flex;
+  font-family: Arial, Helvetica, sans-serif; /* setter standard font */
+  line-height: 1.6; /* linjeavstand */
+  background:#fff; /* hvit bakgrunn */
+  color:#000; /* svart tekst */
+  display: flex; /* bruker flex layout for å få footer nederst */
   flex-direction: column;
-  min-height: 100vh;
-  }
-  .navbar {
-    position: sticky; top: 0; z-index: 1000;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:1rem 2rem;
-    background: transparent;
-    color:#000;
-    border-bottom:1px solid transparent;
-    transition: background .3s, border-color .3s, color .3s;
-  }
-.navbar.scrolled {
-  background:#fff !important;
-  border-bottom-color:#eee;
+  min-height: 100vh; /* hele vinduet i høyde */
 }
-.nav-logo { font-size:1.2rem; font-weight:normal; }
 
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky; top: 0; z-index: 1000; /* fester navbar på toppen ved scroll */
+  display:flex; align-items:center; justify-content:space-between; /* flex layout for logo og lenker */
+  padding:1rem 2rem; /* luft rundt innhold */
+  background: transparent; /* gjennomsiktig til vi scroller */
+  color:#000; /* tekstfarge */
+  border-bottom:1px solid transparent; /* usynlig linje under, blir synlig når vi scroller */
+  transition: background .3s, border-color .3s, color .3s; /* glatt overgang når vi scroller */
+}
+.navbar.scrolled {
+  background:#fff !important; /* hvit bakgrunn når vi scroller */
+  border-bottom-color:#eee; /* lys grå linje under */
+}
+.nav-logo { font-size:1.2rem; font-weight:normal; } /* logo-tekst */
+
+/* menylenker */
 .nav-links { list-style:none; display:flex; gap:1.5rem; margin:0; padding:0; }
 .nav-links a {
   color:inherit; text-decoration:none; font-size:1.2rem; font-weight:normal;
-  position:relative; padding-bottom:2px;
+  position:relative; padding-bottom:2px; /* litt luft under for strek-effekt */
 }
 .nav-links a::after {
-  content:""; position:absolute; left:0; bottom:0; height:2px; width:0;
+  content:""; position:absolute; left:0; bottom:0; height:2px; width:0; /* strek starter usynlig */
   background: currentColor; transition: width .3s ease;
 }
-.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; } /* strek vises når hover/aktiv */
 
 /* Hamburger (mobil) */
 .menu-toggle {
-  display:none; background:none; border:none; cursor:pointer;
+  display:none; /* skjult på desktop */
+  background:none; border:none; cursor:pointer;
   font-size:1.8rem; color:inherit; transition: transform .2s ease;
 }
-.menu-toggle:active { transform: scale(.9); }
+.menu-toggle:active { transform: scale(.9); } /* liten trykk-animasjon */
 
 /* ===== Layout ===== */
 main.content {
-  flex: 1;
-  padding:2rem;
+  flex: 1; /* fyller ut plass mellom header og footer */
+  padding:2rem; /* luft rundt */
 }
-.narrow { max-width:900px; margin:0 auto; }
+.narrow { max-width:900px; margin:0 auto; } /* sentrer smalt innhold */
 
 h1 {
   margin:0 0 2rem; text-align:center;
@@ -65,7 +69,7 @@ h1 {
   margin-bottom:2rem; text-align:center;
 }
 .profile-image {
-  width:140px; height:auto; border-radius:10%;
+  width:140px; height:auto; border-radius:10%; /* rundere hjørner */
   border:3px solid currentColor; margin-bottom:1rem;
 }
 .profile-name { font-size:1.5rem; font-weight:600; margin:0 0 .3rem; }
@@ -78,7 +82,7 @@ h1 {
 /* ===== Boxes (index) ===== */
 .box-grid {
   max-width:1000px; margin:0 auto 2.5rem;
-  display:grid; grid-template-columns:repeat(2,1fr); gap:1rem;
+  display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; /* 2 kolonner, mellomrom */
 }
 .info-box {
   background:#fff; border:1px solid #ccc; border-radius:16px;
@@ -86,14 +90,14 @@ h1 {
 }
 .info-box h3 { margin:0; font-size:1.25rem; }
 .box-description { color:#333; }
-.box-content { min-height:80px; display:grid; place-items:center; }
+.box-content { min-height:80px; display:grid; place-items:center; } /* innhold sentrert */
 
 /* ===== Contact grid ===== */
 .contact-grid {
   max-width: 1000px;
   margin: 0 auto 2rem;
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* så mange kolonner som passer */
   gap: 1rem;
   justify-items: center;
 }
@@ -105,7 +109,7 @@ h1 {
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .contact-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* løft litt opp */
   box-shadow: 0 2px 10px rgba(0,0,0,.06);
   border-color:#bbb;
 }
@@ -141,15 +145,15 @@ h1 {
 .resume-wrapper {
   max-width: 1200px;
   margin: 0 auto 2rem;
-  padding: 8px;                 /* kant rundt PDF */
+  padding: 8px; /* kant rundt PDF */
   border: 1px solid #ccc;
   border-radius: 8px;
   background: #f9f9f9;
 }
 .resume-embed {
   display: block;
-  width: calc(100% - 16px);     /* justert for padding */
-  height: calc(95vh - 16px);    /* jevnt mellomrom oppe/nede */
+  width: calc(100% - 16px); /* trekker fra padding */
+  height: calc(95vh - 16px); /* nesten full høyde, trekker fra padding */
   margin: 0 auto;
   border: none;
 }
@@ -166,15 +170,15 @@ h1 {
 
 /* ===== Mobile (<=700px) ===== */
 @media (max-width:700px){
-  .menu-toggle { display:block; }
+  .menu-toggle { display:block; } /* vis hamburger */
   .nav-links {
     display:none; flex-direction:column; gap:1rem;
     position:absolute; top:100%; left:0; right:0;
     background:#fff; padding:1rem 2rem; border-bottom:1px solid #eee;
   }
-  .nav-links.open { display:flex; }
+  .nav-links.open { display:flex; } /* åpnes når vi trykker på hamburger */
 
-  .box-grid { grid-template-columns:1fr; }
+  .box-grid { grid-template-columns:1fr; } /* bokser under hverandre */
 
   .resume-wrapper { max-width: 100%; padding: 6px; }
   .resume-embed { width: calc(100% - 12px); height: calc(80vh - 12px); }
@@ -195,4 +199,14 @@ h1 {
   @media (max-width:700px){
     .nav-links { background:#000; border-bottom:1px solid #333; }
   }
+}
+
+/* ===== Custom styling for klokke og dato ===== */
+#box-content-1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+#box-content-2 {
+  font-weight: bold;
 }

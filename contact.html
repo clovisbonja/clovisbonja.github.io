@@ -2,44 +2,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Contact</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8"/> <!-- støtter norske tegn -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/> <!-- responsiv mobilstøtte -->
+  <title>Contact</title> <!-- vises i nettleserfanen -->
+  <link rel="stylesheet" href="style.css"/> <!-- kobler til felles CSS -->
+  <script defer src="script.js"></script> <!-- felles JS (navbar m.m.) -->
 </head>
 <body id="top">
 
+  <!-- Navbar (øverst på siden) -->
   <header class="navbar">
-    <div class="nav-logo">My Portfolio</div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-logo">Portfolio</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button> <!-- hamburger på mobil -->
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="resume.html">CV / Resume</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li> <!-- markerer denne siden -->
       </ul>
     </nav>
   </header>
 
+  <!-- Hovedinnhold -->
   <main class="content narrow">
     <h1>Contact</h1>
 
-    <!-- Kontaktpunkter: legg til flere .contact-item ved behov -->
+    <!-- Kontaktbokser -->
     <section class="contact-grid" aria-label="Contact links">
+
+      <!-- LinkedIn-boks -->
       <a class="contact-item" href="https://www.linkedin.com/in/clovis-bonja-4a2ba42b2/" target="_blank" rel="noopener">
         <img class="contact-logo" src="linkedIn.jpg" alt="LinkedIn logo">
         <div class="contact-name">LinkedIn</div>
         <div class="contact-handle">@clovisbonja</div>
       </a>
 
+      <!-- GitHub-boks -->
       <a class="contact-item" href="https://github.com/clovisbonja/clovisbonja.github.io/tree/main" target="_blank" rel="noopener">
         <img class="contact-logo" src="githublogo.png" alt="GitHub logo">
         <div class="contact-name">GitHub</div>
         <div class="contact-handle">@clovisbonja</div>
       </a>
 
+      <!-- Email-boks -->
       <a class="contact-item" href="mailto:clovisbonja@gmail.com">
         <img class="contact-logo" src="mailLogo.jpg" alt="Email icon">
         <div class="contact-name">Email</div>
@@ -48,6 +54,7 @@
     </section>
   </main>
 
+  <!-- Footer nederst -->
   <footer class="footer">
     &copy; My Portfolio —
     <a href="#top" class="back-to-top">Back to top ↑</a>

@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>CV / Resume</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8"/> <!-- gjør at norske tegn (æøå) fungerer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/> <!-- tilpasser for mobil -->
+  <title>CV / Resume</title> <!-- tittelen som vises i nettleserfanen -->
+  <link rel="stylesheet" href="style.css"/> <!-- kobler til CSS -->
+  <script defer src="script.js"></script> <!-- kjører JS etter at HTML er lastet -->
 </head>
 <body id="top">
 
+  <!-- Navigasjonsmeny -->
   <header class="navbar">
-    <div class="nav-logo">Portfolio</div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-logo">Portfolio</div> <!-- Logo / tekst -->
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button> <!-- hamburger meny (mobil) -->
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html" class="active">CV / Resume</a></li>
+        <li><a href="resume.html" class="active">CV / Resume</a></li> <!-- markerer at vi er på denne siden -->
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hovedinnhold -->
   <main class="content">
     <h1>CV / Resume</h1>
     <div class="resume-wrapper">
+      <!-- Viser PDF direkte på nettsiden, med scroll inne i boksen -->
       <embed src="JobbCVIT.pdf" type="application/pdf" class="resume-embed"/>
     </div>
   </main>
 
+  <!-- Footer nederst -->
   <footer class="footer">
     &copy; My Portfolio —
     <a href="#top" class="back-to-top">Back to top ↑</a>
